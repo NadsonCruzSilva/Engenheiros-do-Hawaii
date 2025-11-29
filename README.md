@@ -1,7 +1,9 @@
+![Nuvem de Palavras](<img width="980" height="496" alt="image" src="https://github.com/user-attachments/assets/e93c2a32-dbe2-4ebb-9d64-3761b382f22d" />)
+
 **Instituição:** IFES
 **Disciplina:** Tópicos Especiais em Banco de Dados
 **Grupo:** Flávia Partelli e Nadson da Cruz
-**Data de Entrega:** 09/12
+
 
 ---
 
