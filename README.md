@@ -1,73 +1,65 @@
+# **Análise Computacional da Lírica: Engenheiros do Hawaii**
 
-**Instituição:** IFES
-**Disciplina:** Tópicos Especiais em Banco de Dados
-**Grupo:** Flávia Partelli e Nadson da Cruz
-
-
----
-
-## 1. Visão Geral do Projeto
-Este projeto tem como objetivo aplicar técnicas de Processamento de Linguagem Natural (NLP) e modelos de linguagem (LLMs) para analisar a discografia da banda **Engenheiros do Hawaii**.
-
-O foco foi investigar padrões no estilo lírico de Humberto Gessinger, utilizando desde contagens estatísticas simples até modelos de IA para detecção de similaridade semântica.
+**Instituição:** IFES  
+**Disciplina:** Tópicos Especiais em Banco de Dados  
+**Grupo:** Flávia Partelli e Nadson da Cruz Silva
 
 ---
 
-## 2. Experimentos Realizados (b.1)
+## **1\. Visão Geral do Projeto**
 
-Selecionamos três experimentos distintos conforme o desafio proposto:
+Este projeto transcende a simples contagem de palavras. Utilizamos técnicas avançadas de Processamento de Linguagem Natural (NLP) e Modelos de Linguagem (LLMs) como ferramentas para desconstruir a "arquitetura de pensamento" de Humberto Gessinger.
 
-1.  **Similaridade entre Letras (Embeddings):** Uso de IA para encontrar conexões semânticas profundas (Opção 1 do Desafio).
-2.  **Palavras e Temas Dominantes (Nuvem):** Análise de frequência de vocabulário (Opção 2 do Desafio).
-3.  **Classificação Intuitiva:** Categorização baseada em léxico de sentimentos (Opção 4 do Desafio).
+O nosso objetivo central foi investigar se os dados matemáticos corroboram a **assinatura existencialista, os paradoxos e a crítica social** que, em nossa visão, definem a banda Engenheiros do Hawaii.
 
 ---
 
-## 3. Resultados e Métricas (b.2 e b.3)
+## **2\. Experimentos Realizados**
 
-### Experimento 1: Similaridade Semântica com Embeddings
-**Objetivo:** Descobrir quais músicas tratam dos mesmos temas, mesmo que não usem as mesmas palavras.
+Executamos três abordagens distintas para triangular o estilo da banda:
 
-* **Metodologia:** Utilizamos a biblioteca `sentence-transformers` com o modelo `paraphrase-multilingual-MiniLM-L12-v2`. Transformamos cada letra em um vetor vetorial (embedding) e calculamos a distância entre eles.
-* **Métrica Utilizada:** **Similaridade de Cosseno** (Cosine Similarity), onde 1.0 significa idêntico e 0.0 significa totalmente diferente.
-
-**Resultados Quantitativos:**
-Para a música alvo **"Infinita Highway"**, o modelo identificou o seguinte Top 3 de similaridade:
-
-1.  **[Cruzada]** — Score: `0.63`
-2.  **[Deserto Freezer]** — Score: `0.61`
-3.  **[A Promessa]** — Score: `0.52`
-4.  **[Ando Só]** — Score: `0.52`
-
-**Análise Qualitativa:**
-O modelo foi capaz de agrupar músicas que compartilham a temática da **solidão, do deslocamento e da jornada individual**.
-* Enquanto *Infinita Highway* fala sobre dirigir sozinho ("viver não é preciso"), *Ando Só* e *Cruzada* reforçam a ideia do indivíduo que caminha solitário pelas ruas ou pela vida ("não sei andar sozinho por essas ruas", "ando só pois só eu sei pra onde ir").
-* Isso prova que os embeddings capturaram o sentimento de isolamento e movimento, indo além da simples coincidência de palavras.
+1. **Palavras e Temas Dominantes (Nuvem de Palavras):** Mapeamento de frequência e relevância (TF-IDF) para identificar as obsessões vocabulares do compositor(Opção 2 do desafio).  
+2. **Similaridade Semântica (Embeddings):** Uso de vetores densos para mapear a proximidade de *significado* entre músicas, ignorando a coincidência exata de palavras(Opção 1 do desafio).  
+3. **Classificação Temática Intuitiva:** Um classificador baseado em regras léxicas expandidas para categorizar a discografia em estados emocionais(Opção 4 do desafio).
 
 ---
 
-### Experimento 2: Nuvem de Palavras e Temas Dominantes
+## **3\. Resultados Detalhados e Nossa Análise**
+
+### **Experimento 1: Palavras e Temas Dominantes (Nuvem de Palavras)**
+
+*Metodologia: Contagem absoluta e TF-IDF.*
+
 **Objetivo:** Visualizar os termos mais frequentes ("buzzwords") na discografia da banda.
 
 * **Metodologia:** Unificação de todo o *corpus* (letras), remoção de *stopwords* (conectivos sem significado) e tokenização simples.
 * **Métrica Utilizada:** **Frequência de Termo (TF)** - contagem absoluta de aparições.
 
-**Visualização (Print/Gráfico):**
-![Nuvem de Palavras](<img width="980" height="496" alt="image" src="https://github.com/user-attachments/assets/e93c2a32-dbe2-4ebb-9d64-3761b382f22d" />)
-
-**Resultados Quantitativos:**
-As palavras com maior frequência absoluta foram:
-1.  **Tudo**
-2.  **Dia**
-3.  **Nada**
+**Visualização (Gráfico):**
+![Nuvem de Palavras](nuvem.png)
 
 
-**Análise Qualitativa:**
-A predominância dos termos opostos **"Tudo"** e **"Nada"** nas primeiras posições confirma estatisticamente a característica central da lírica de Humberto Gessinger: o uso constante de **paradoxos e dicotomias**. As letras transitam frequentemente entre a totalidade e o vazio. Além disso, a alta frequência da palavra **"Dia"** reforça a temática da passagem do tempo e a observação do cotidiano, elementos essenciais na narrativa da banda.
+Os dados extraídos confirmaram nossa hipótese de que o estilo de escrita de Gessinger é estruturalmente baseado em **binarismos e dicotomias**.
+
+**Estatísticas Reveladoras:**
+
+* **Tudo:** 275 ocorrências (1º lugar)  
+* **Nada:** 163 ocorrências (3º lugar)  
+* **Dia:** 165 ocorrências (2º lugar)  
+* **Noite:** 111 ocorrências (10º lugar)
+
+**Nossa Interpretação Estilística:**
+
+1. **A Dialética do Tudo/Nada:** A presença massiva dessas duas palavras no topo da lista não é acidental. Concluímos que a banda constrói sua narrativa através do contraste constante, raramente afirmando algo absoluto sem apresentar o seu oposto.  
+2. **A Obsessão Temporal:** Com "Dia", "Noite", "Sempre" (119) e "Tempo" dominando o ranking, definimos a banda, com base nos dados, como "Cronistas do Tempo". As letras focam na passagem do tempo e na efemeridade, mais do que em objetos ou cenários.  
+3. **Relevância (TF-IDF):** Destacamos o termo "Gente" (Score 24.24) como altamente relevante. Isso nos indica que, apesar do isolamento ser um tema recorrente, a obra mantém um foco sociológico na observação do comportamento humano.
 
 ---
 
-### Experimento 3: Classificação Intuitiva (Léxico Robusto)
+### **Experimento 2: Classificação Temática Intuitiva**
+
+*Metodologia: Classificação via dicionário léxico expandido.*
+
 **Objetivo:** Classificar automaticamente **toda a discografia** em três categorias temáticas: *Melancólica*, *Otimista* ou *Filosófica*.
 
 **Metodologia:**
@@ -81,29 +73,69 @@ O algoritmo percorreu todas as músicas da base de dados, contabilizou as ocorr�
 **Resultados Quantitativos (Distribuição):**
 O gráfico abaixo mostra a quantidade de músicas identificadas em cada categoria:
 
-![Gráfico de Barras]([INSIRA AQUI O PRINT DO GRÁFICO DE BARRAS GERADO PELO CÓDIGO])
+![Gráfico de Barras](grafico.png)
 
-* **Melancólica:**`[62]` músicas (Categoria Dominante)
-* **Filosófica:** `[58]` músicas
-* **Otimista:** `[45]` músicas
-* **Indefinido:** `[12]` músicas
+**Análise dos Resultados:**
 
-**Exemplos Classificados pelo Algoritmo:**
-* **Músicas Melancólicas:** *Piano Bar, Vozes, Alívio Imediato*
-* **Músicas Filosóficas:** *Seguir Viagem, Longe Demais das Capitais, A Conquista do Espaço*
-* **Músicas Otimistas:** *Outras Frequências, Segurança, Nunca Mais Poder*
-
-**Análise Qualitativa:**
-O classificador apontou uma predominância da categoria **Melancólica**, o que condiz com a crítica musical sobre a banda. O uso de um dicionário expandido (incluindo sinônimos como "angústia" e "nostalgia") permitiu uma classificação mais precisa do que a contagem simples de poucas palavras, capturando melhor as nuances das letras.
+* **A Predominância da Melancolia:** O fato de 35% das músicas serem classificadas como Melancólicas corrobora nossa percepção da estética *Cold Wave* e Pós-Punk que influenciou a banda.  
+* **O "Falso" Otimismo:** Observamos que muitas músicas classificadas como "Otimistas" (como *Vida Real*) possuem letras que desafiam a realidade, sugerindo uma esperança de resistência, e não de alegria ingênua.  
+* **Fronteiras Tênues:** O fato de a categoria "Filosófica" estar quase empatada com a "Melancólica" reforça nossa visão de que a tristeza na obra da banda não é passiva, mas sim **cerebral e reflexiva**.
 
 ---
+
+### **Experimento 3: Similaridade Semântica (Embeddings)**
+
+*Metodologia: Sentence-Transformers (paraphrase-multilingual-MiniLM-L12-v2) e Similaridade de Cosseno.*
+
+**Objetivo:** Descobrir quais músicas tratam dos mesmos temas, mesmo que não usem as mesmas palavras.
+
+* **Metodologia:** Utilizamos a biblioteca `sentence-transformers` com o modelo `paraphrase-multilingual-MiniLM-L12-v2`. Transformamos cada letra em um vetor vetorial (embedding) e calculamos a distância entre eles.
+* **Métrica Utilizada:** **Similaridade de Cosseno** (Cosine Similarity), onde 1.0 significa idêntico e 0.0 significa totalmente diferente.
+
+**Resultados Quantitativos:**
+Para a música alvo **"Infinita Highway"**, o modelo identificou o seguinte Top 3 de similaridade:
+
+1.  **[Cruzada]** — Score: `0.63`
+2.  **[Deserto Freezer]** — Score: `0.61`
+3.  **[A Promessa]** — Score: `0.52`
+4.  **[Ando Só]** — Score: `0.52`
+
+Ao analisarmos os vetores gerados, observamos que as conexões vão muito além da coincidência de palavras, revelando o "subtexto" das canções.
+
+#### **Aprofundamento da música "O Papa é Pop"**
+
+A análise desta faixa específica nos trouxe conexões surpreendentes que, sob nossa ótica, explicam a profundidade da crítica da banda.
+
+**Top 3 Similaridades que Encontramos:**
+
+1. **Outono em Porto Alegre** (0.57)  
+2. **A Promessa** (0.57)  
+3. **A Verdade a Ver Navios** (0.55)
+
+Nossa Interpretação Crítica:  
+Inicialmente, estranhamos a conexão de um hit pop explosivo ("O Papa é Pop") com baladas melancólicas. Porém, ao analisarmos as letras lado a lado, concluímos que:
+
+* **A Conexão da "Ilusão":** Enquanto "O Papa é Pop" critica a superficialidade da fama e a mercantilização da fé, "A Verdade a Ver Navios" trata da ausência de verdade ("a verdade não está no porto"). Interpretamos que o algoritmo agrupou ambas pelo tema comum do **vazio de significado** na sociedade moderna.  
+* **O Ceticismo:** A proximidade com "Outono em Porto Alegre" reforça nossa tese de que Gessinger é um cético. "Papa" grita sobre a banalidade externa, e "Outono" sussurra sobre a repetição cinza da vida. Para nós, isso evidencia que ambas as músicas compartilham um núcleo de **desencanto com a realidade**.
+
+#### **Aprofundamento da música "Infinita Highway"**
+
+* **Conexões:** *Cruzada* (0.63), *Deserto Freezer* (0.61).  
+* **Nossa Análise:** Notamos que o modelo agrupou canções sobre **deslocamento e não-pertencimento**. Não se trata apenas do tema "estrada", mas da incapacidade do indivíduo de se fixar. Tanto em *Cruzada* quanto em *Infinita Highway*, identificamos a narrativa da **solidão em movimento**, validada pela alta similaridade vetorial.
+
 ---
 
-## 4. Reflexão Final
+## **4\. Reflexão Final: O que a Máquina "Entendeu"?**
 
-A realização destes experimentos demonstrou como diferentes níveis de complexidade computacional revelam facetas diferentes da obra artística:
+Ao final desta investigação, nossa interpretação é que os algoritmos conseguiram, de fato, penetrar na camada semântica da obra de Humberto Gessinger, "entendendo" padrões que geralmente atribuímos à sensibilidade humana.
 
-1.  A **contagem simples (Exp B e C)** foi surpreendentemente eficaz para categorizar o gênero e o estilo geral da banda.
-2.  O uso de **Inteligência Artificial (Exp A)** trouxe um nível de profundidade maior, encontrando conexões sutis de significado que passariam despercebidas numa análise puramente estatística.
+Destacamos três conclusões principais sobre o que a máquina percebeu:
 
-Concluímos que a máquina consegue, sim, "entender" a estrutura temática dos Engenheiros do Hawaii, validando matematicamente a percepção de que se trata de uma banda de rock com viés existencialista e filosófico.
+1. A Máquina Entendeu a Ironia:  
+   Ao conectar O Papa é Pop a músicas tristes e reflexivas, a inteligência artificial "percebeu" que a música não é uma celebração pop, mas uma crítica melancólica sobre ela. Para nós, isso prova que o modelo capturou o tom e a intenção por trás das palavras, e não apenas o vocabulário superficial.  
+2. A Descoberta da "Fórmula" da Angústia:  
+   Nós sabíamos intuitivamente que a banda falava sobre paradoxos. A máquina confirmou isso matematicamente ao colocar "Tudo" e "Nada" como os pilares estatísticos da discografia. Interpretamos isso como a validação de que a angústia na obra dos Engenheiros do Hawaii é estrutural, construída sobre uma lógica binária de oposição constante.  
+3. A Solidão é Quantificável:  
+   A alta similaridade entre músicas de épocas diferentes (Cruzada e Infinita Highway) nos mostrou que a máquina identificou a coerência temática do compositor. Para o algoritmo, a solidão não mudou de forma em 20 anos; ela manteve a mesma "assinatura vetorial".
+
+Em suma, nossa conclusão é que a máquina não apenas contou palavras, ela **mapeou a arquitetura do desamparo** que define a banda. Os dados nos contaram a mesma história que as músicas: a de indivíduos solitários tentando encontrar sentido entre o tudo e o nada.
